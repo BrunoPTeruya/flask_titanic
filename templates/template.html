@@ -8,7 +8,7 @@
   .container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .input-group {
@@ -30,43 +30,44 @@
     border-radius: 5px;
   }
 
-  .submit-btn {
+  .submit-btn, .voltar-btn {
     margin-left: 210px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .submit-btn {
     background-color: #28a745;
     color: #fff;
-    cursor: pointer;
   }
 
   .submit-btn:hover {
-    background-color: #218838;  
+    background-color: #218838;
   }
 
   .voltar-btn {
-    margin-left: 210px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
     background-color: #6c757d;
     color: #fff;
-    cursor: pointer;
+    display: none; /* Inicialmente oculto */
   }
 
   .voltar-btn:hover {
     background-color: #5a6268;
   }
 
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2 style="text-align: center; margin-bottom: 20px;">Previsão de Sobrevivência do Titanic</h1>
-
-
 <div class="container">
+  <h2 class="title">Previsão de Sobrevivência do Titanic</h2>
+
   <form action="/prever" method="POST">
     <div class="input-group">
       <label for="Title">Title:</label>
@@ -98,11 +99,40 @@
     </div>
     <button type="submit" class="submit-btn">Prever</button>
   </form>  
+
   <div id="response" style="text-align: center; margin-top: 20px;"></div>
 
   <div style="text-align: center; margin-top: 20px;">
     <a href="/" class="voltar-btn">Voltar</a>
   </div>
-  
+</div>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    fetch('/prever', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        Title: document.querySelector('#Title').value,
+        Pclass: document.querySelector('#Pclass').value,
+        Sex: document.querySelector('#Sex').value,
+        Age: document.querySelector('#Age').value,
+        Fare: document.querySelector('#Fare').value,
+        Embarked: document.querySelector('#Embarked').value,
+        IsAlone: document.querySelector('#IsAlone').value,
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.querySelector('#response').textContent = data.resultado;
+      document.querySelector('.voltar-btn').style.display = 'block'; // Mostra o botão Voltar
+    });
+  });
+</script>
+
 </body>
 </html>
