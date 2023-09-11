@@ -131,7 +131,7 @@
     })
     .then(response => response.json())
     .then(data => {
-      document.querySelector('#response').textContent = data.resultado;
+      document.querySelector('#response').textContent = data.resposta;
       document.querySelector('.voltar-btn').style.display = 'block'; // Mostra o botão Voltar
     })
     .catch(error => {
