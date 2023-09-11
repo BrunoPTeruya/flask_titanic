@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-group {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-group label {
+    margin-right: 10px;
+    width: 100px;
+    text-align: right;
+  }
+
+  .input-group input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .submit-btn {
+    margin-left: 110px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form action="/prever" method="POST">
+    <div class="input-group">
+      <label for="Title">Title:</label>
+      <input type="text" id="Title" name="Title">
+    </div>
+    <div class="input-group">
+      <label for="Pclass">Pclass:</label>
+      <input type="text" id="Pclass" name="Pclass">
+    </div>
+    <div class="input-group">
+      <label for="Sex">Sex:</label>
+      <input type="text" id="Sex" name="Sex">
+    </div>
+    <div class="input-group">
+      <label for="Age">Age:</label>
+      <input type="text" id="Age" name="Age">
+    </div>
+    <div class="input-group">
+      <label for="Fare">Fare:</label>
+      <input type="text" id="Fare" name="Fare">
+    </div>
+    <div class="input-group">
+      <label for="Embarked">Embarked:</label>
+      <input type="text" id="Embarked" name="Embarked">
+    </div>
+    <div class="input-group">
+      <label for="IsAlone">IsAlone:</label>
+      <input type="text" id="IsAlone" name="IsAlone">
+    </div>
+    <button type="submit" class="submit-btn">Prever</button>
+  </form>
+</div>
+
+</body>
+</html>
