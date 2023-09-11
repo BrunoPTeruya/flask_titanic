@@ -53,7 +53,7 @@
     </div>
     <div class="input-group">
       <label for="Pclass">Pclass:</label>
-      <input type="text" id="Pclass" name="Pclass">
+      <input type="number" id="Pclass" name="Pclass" min="1" max="3">
     </div>
     <div class="input-group">
       <label for="Sex">Sex:</label>
@@ -61,11 +61,11 @@
     </div>
     <div class="input-group">
       <label for="Age">Age:</label>
-      <input type="text" id="Age" name="Age">
+      <input type="number" id="Age" name="Age" min="0" max="100">
     </div>
     <div class="input-group">
       <label for="Fare">Fare:</label>
-      <input type="text" id="Fare" name="Fare">
+      <input type="number" id="Fare" name="Fare" step="0.01" min="0">
     </div>
     <div class="input-group">
       <label for="Embarked">Embarked:</label>
@@ -73,10 +73,11 @@
     </div>
     <div class="input-group">
       <label for="IsAlone">IsAlone:</label>
-      <input type="text" id="IsAlone" name="IsAlone">
+      <input type="number" id="IsAlone" name="IsAlone" min="0" max="1">
     </div>
     <button type="submit" class="submit-btn">Prever</button>
   </form>
+
 </div>
 
 </body>

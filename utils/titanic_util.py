@@ -69,9 +69,9 @@ def Tratar_Entrada_Api(entrada):
     tratado = pd.DataFrame()
 
     tratado['Pclass'] = passaggeiro['Pclass']
-    tratado['Age'] = passaggeiro['Age']
+    tratado['Age'] = pd.to_numeric(passaggeiro['Age'])
     tratado['Embarked'] = passaggeiro['Embarked']
-    tratado['Fare'] = passaggeiro['Fare']
+    tratado['Fare'] = pd.to_numeric(passaggeiro['Fare'])
     tratado['Title'] = passaggeiro['Title']
     tratado['IsAlone'] = passaggeiro['IsAlone']
     tratado['Sex'] = passaggeiro['Sex']
