@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   .container {
     display: flex;
@@ -18,18 +19,19 @@
 
   .input-group label {
     margin-right: 10px;
-    width: 100px;
+    width: 200px;
     text-align: right;
   }
 
   .input-group input {
+    min-width: 300px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
 
   .submit-btn {
-    margin-left: 110px;
+    margin-left: 210px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -39,46 +41,68 @@
   }
 
   .submit-btn:hover {
-    background-color: #218838;
+    background-color: #218838;  
   }
+
+  .voltar-btn {
+    margin-left: 210px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .voltar-btn:hover {
+    background-color: #5a6268;
+  }
+
 </style>
 </head>
 <body>
+
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 20px;">Previsão de Sobrevivência do Titanic</h1>
+
 
 <div class="container">
   <form action="/prever" method="POST">
     <div class="input-group">
       <label for="Title">Title:</label>
-      <input type="text" id="Title" name="Title">
+      <input type="text" id="Title" name="Title" placeholder="Mr, Miss, Mrs, Master ou Rare">
     </div>
     <div class="input-group">
       <label for="Pclass">Pclass:</label>
-      <input type="number" id="Pclass" name="Pclass" min="1" max="3">
+      <input type="text" id="Pclass" name="Pclass" placeholder="Número: 1, 2 ou 3">
     </div>
     <div class="input-group">
       <label for="Sex">Sex:</label>
-      <input type="text" id="Sex" name="Sex">
+      <input type="text" id="Sex" name="Sex" placeholder="0 (male) ou 1 (female)">
     </div>
     <div class="input-group">
       <label for="Age">Age:</label>
-      <input type="number" id="Age" name="Age" min="0" max="100">
+      <input type="text" id="Age" name="Age" placeholder="Idade (como um número)">
     </div>
     <div class="input-group">
       <label for="Fare">Fare:</label>
-      <input type="number" id="Fare" name="Fare" step="0.01" min="0">
+      <input type="text" id="Fare" name="Fare" placeholder="Valor da tarifa (número decimal dividido por ponto)">
     </div>
     <div class="input-group">
       <label for="Embarked">Embarked:</label>
-      <input type="text" id="Embarked" name="Embarked">
+      <input type="text" id="Embarked" name="Embarked" placeholder="0 (S), 1 (C) ou 2 (Q)">
     </div>
     <div class="input-group">
       <label for="IsAlone">IsAlone:</label>
-      <input type="number" id="IsAlone" name="IsAlone" min="0" max="1">
+      <input type="text" id="IsAlone" name="IsAlone" placeholder="0 (não) ou 1 (sim)">
     </div>
     <button type="submit" class="submit-btn">Prever</button>
-  </form>
+  </form>  
+  <div id="response" style="text-align: center; margin-top: 20px;"></div>
 
-</div>
-
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="/" class="voltar-btn">Voltar</a>
+  </div>
+  
 </body>
 </html>
