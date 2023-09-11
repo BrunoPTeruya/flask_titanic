@@ -68,12 +68,12 @@ def Tratar_Entrada_Api(entrada):
 
     tratado = pd.DataFrame()
 
-    tratado['Pclass'] = passaggeiro['Pclass']
-    tratado['Age'] = pd.to_numeric(passaggeiro['Age'])
-    tratado['Embarked'] = passaggeiro['Embarked']
-    tratado['Fare'] = pd.to_numeric(passaggeiro['Fare'])
+    tratado['Pclass'] = passaggeiro['Pclass'].astype(int)
+    tratado['Age'] = passaggeiro['Age'].astype(float)
+    tratado['Fare'] = passaggeiro['Fare'].astype(float)
     tratado['Title'] = passaggeiro['Title']
-    tratado['IsAlone'] = passaggeiro['IsAlone']
+    tratado['Embarked'] = passaggeiro['Embarked']
+    tratado['IsAlone'] = passaggeiro['IsAlone'].astype(int)
     tratado['Sex'] = passaggeiro['Sex']
 
     # Titulo    
