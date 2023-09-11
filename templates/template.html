@@ -130,9 +130,14 @@
     .then(data => {
       document.querySelector('#response').textContent = data.resultado;
       document.querySelector('.voltar-btn').style.display = 'block'; // Mostra o botão Voltar
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+      document.querySelector('#response').textContent = 'Ocorreu um erro, por favor tente novamente';
     });
   });
 </script>
+
 
 </body>
 </html>
