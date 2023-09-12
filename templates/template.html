@@ -104,37 +104,5 @@
     {{ resposta }}
   </div>  
 
-<script>
-  document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    fetch('/prever', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        Title: document.querySelector('#Title').value,
-        Pclass: document.querySelector('#Pclass').value,
-        Sex: document.querySelector('#Sex').value,
-        Age: document.querySelector('#Age').value,
-        Fare: document.querySelector('#Fare').value,
-        Embarked: document.querySelector('#Embarked').value,
-        IsAlone: document.querySelector('#IsAlone').value,
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.querySelector('#response').textContent = data.resposta;
-      document.querySelector('.voltar-btn').style.display = 'block'; // Mostra o botão Voltar
-    })
-    .catch(error => {
-      console.error('Erro:', error);
-      document.querySelector('#response').textContent = 'Ocorreu um erro, por favor tente novamente';
-    });
-  });
-</script>
-
-
 </body>
 </html>
