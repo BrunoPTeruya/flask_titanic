@@ -35,9 +35,8 @@ def prever():
         # Aplicando modelo
         previsao = modelo_arvore.predict(dados_tratados)
         resposta = 'Sobreviveu' if previsao[0] == 1 else 'Morreu'
-        resposta_classe = 'bg-success' if previsao[0] == 1 else 'bg-danger'
 
-        return render_template('template.html', resposta=resposta, resposta_classe=resposta_classe)
+        return render_template('template.html', resposta=resposta)
 
     except Exception as e:
         return str(e), 500
