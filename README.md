@@ -16,7 +16,7 @@ C:.
 │ template.html          - Template HTML usado para renderizar a interface de usuário da aplicação.
 │
 └───utils
-titanic_util.py          - Arquivo contendo funções auxiliares e utilitárias usadas em toda a aplicação.
+  titanic_util.py          - Arquivo contendo funções auxiliares e utilitárias usadas em toda a aplicação.
 ```
 
 ## Instruções para Instalação
