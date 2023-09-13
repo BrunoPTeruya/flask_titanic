@@ -13,10 +13,10 @@ C:.
 │ modelo_DecisionTree.pkl - Arquivo que contém o modelo de árvore de decisão pré-treinado, usado para fazer previsões na aplicação.
 │
 ├───templates
-│ template.html          - Template HTML usado para renderizar a interface de usuário da aplicação.
+│ template.html           - Template HTML usado para renderizar a interface de usuário da aplicação.
 │
 └───utils
-  titanic_util.py          - Arquivo contendo funções auxiliares e utilitárias usadas em toda a aplicação.
+  titanic_util.py         - Arquivo contendo funções auxiliares e utilitárias usadas em toda a aplicação.
 ```
 
 ## Instruções para Instalação
